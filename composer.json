@@ -1,0 +1,15 @@
+{
+  "version": "0.3.0",
+  "require" : {
+    "guzzlehttp/guzzle": ">=4.0,<6.0",
+    "monolog/monolog": "~1.7",
+    "troydavisson/phrets": "2.*",
+    "aws/aws-sdk-php": "3.3.*",
+    "luracast/restler": "3.0.0",
+    "athlon1600/php-proxy": "^5.0",
+    "gregwar/cache": "^1.0"
+  },
+  "autoload": {
+    "classmap": ["lib/classes"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "access": {
+    "keys": {
+      "user": "USER_KEY",
+      "admin": "ADMIN_KEY"
+    },
+    "mls_api": {
+      "url": "MLS_API_URL",
+      "x_access_token": "X_ACCESS_TOKEN",
+      "x_mls_token": "X_MLS_TOKEN"
+    },
+    "s3": {}
+  }
+}

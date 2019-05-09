@@ -1,0 +1,6 @@
+# wpCloud/Controller
+
+check process haproxy with pidfile /var/run/haproxy.pid
+   start program = "/etc/init.d/haproxy start" as haproxy
+   stop program  = "/etc/init.d/haproxy stop"
+
