@@ -30,6 +30,7 @@ bash bin/build.sh; docker rm -fv rets-api.$(git rev-parse --symbolic-full-name -
 
 ## Installation
 
+* Make a fork of the current repository into your user/organization
 * Update config data with needed values https://github.com/boxmls/service-rets-api/blob/master/config.json#L4-L10
 
 ## Swager setup 
