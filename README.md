@@ -31,7 +31,7 @@ bash bin/build.sh; docker rm -fv rets-api.$(git rev-parse --symbolic-full-name -
 ## Installation
 
 * Make a fork of the current repository into your user/organization
-* Update config data with needed values https://github.com/boxmls/service-rets-api/blob/master/config.json#L4-L10
+* Update config data with needed values at [config.json](https://github.com/boxmls/service-rets-api/blob/master/config.json#L4-L10)
 
 ## Swager setup 
 
@@ -40,7 +40,7 @@ Swagger UI can be accessed here:
 `/docs/index.html`
 
 API Key required: 
-https://github.com/boxmls/service-mls-api/blob/master/package.json#L15
+[package.json](https://github.com/boxmls/service-mls-api/blob/master/package.json#L15)
 
 Also, Swagger UI is accessible via direct URL to rets-api service. To get direct URL:
 
@@ -56,4 +56,4 @@ Also, Swagger UI is accessible via direct URL to rets-api service. To get direct
 
 # Support
 
-Do you have any questions. Please, visit https://boxmls.github.io/support for consulting and help.
+Do you have any questions. Please, visit [Support](https://boxmls.github.io/support) page for consulting and help.
