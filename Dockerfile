@@ -114,34 +114,7 @@ RUN           \
               mkdir /var/log/service-rets-api && \
               chown 500:500 /var/log/service-rets-api
 
-RUN           \
-              ssh-keyscan -t rsa github.com > /home/core/.ssh/known_hosts && \
-              ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
-
-ADD           /static/ssh/git.pem /home/core/.ssh/id_rsa
-ADD           /static/ssh/git.pub /home/core/.ssh/id_rsa.pub
-ADD           /static/ssh/git.pem /root/.ssh/id_rsa
-ADD           /static/ssh/git.pub /root/.ssh/id_rsa.pub
-
-RUN           \
-              chmod 0600 /root/.ssh/* && \
-              chmod 0600 /home/core/.ssh/* && \
-              git init /opt/sources/boxmls/service-rets-api && \
-              git --git-dir=/opt/sources/boxmls/service-rets-api/.git remote add origin git@github.com:boxmls/service-rets-api.git && \
-              git --git-dir=/opt/sources/boxmls/service-rets-api/.git fetch origin && \
-              git --git-dir=/opt/sources/boxmls/service-rets-api/.git checkout master -f
-
-ADD           /bin              /opt/sources/boxmls/service-rets-api/bin
-ADD           /lib              /opt/sources/boxmls/service-rets-api/lib
-ADD           /static           /opt/sources/boxmls/service-rets-api/static
-ADD           /docs             /opt/sources/boxmls/service-rets-api/docs
-ADD           /index.php        /opt/sources/boxmls/service-rets-api/index.php
-ADD           /composer.json    /opt/sources/boxmls/service-rets-api/composer.json
-ADD           /composer.lock    /opt/sources/boxmls/service-rets-api/composer.lock
-ADD           /package.json     /opt/sources/boxmls/service-rets-api/package.json
-ADD           /status.js        /opt/sources/boxmls/service-rets-api/status.json
-ADD           /config.json      /opt/sources/boxmls/service-rets-api/config.json
-ADD           /.gitignore       /opt/sources/boxmls/service-rets-api/.gitignore
+ADD           .              /opt/sources/boxmls/service-rets-api/
 
 RUN           \
               cd /opt/sources/boxmls/service-rets-api && \
