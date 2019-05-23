@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express();
 
-var healthcheck = require('@mypropertyoffice/docker-healthcheck').create( {
+var healthcheck = require('docker-healthcheck').create( {
   "statuses": {
     "elastic_status": false
   }

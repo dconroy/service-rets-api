@@ -7,25 +7,28 @@
 
 ![image](https://user-images.githubusercontent.com/12067297/57533408-60c5ee00-7346-11e9-8649-7ec652e360a7.png)
 
-### Docker Start
-
-To run in development mode we need to change the name and volume-mount our repository for SSH deployment to work:
+### Installing
+Start by cloning the repository locally:
 
 ```
-bash bin/build.sh; docker rm -fv rets-api.$(git rev-parse --symbolic-full-name --abbrev-ref HEAD); docker run -itd \
-  --name=rets-api.$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) \
-  --label="git.owner=boxmls" \
-  --label="git.name=service-rets-api" \
-  --label="git.branch=:$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)" \
-  --env=GIT_OWNER=boxmls \
-  --env=GIT_NAME=service-rets-api \
-  --env=GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) \
+git clone https://github.com/boxmls/service-rets-api -b develop
+```
+
+Next, run a Docker image build:
+```
+docker build --tag=boxmls/service-rets-api:develop . 
+```
+
+
+```
+docker run -itd \
+  --name=rets-api.develop \
   --env=NODE_ENV=development \
   --env=PORT=8080 \
   --memory=4g \
   --publish=8000 \
   --volume=$(pwd):/opt/sources/boxmls/service-rets-api \
-  boxmls/rets-api:master
+  boxmls/service-rets-api:develop
 ```
 
 ## Installation
